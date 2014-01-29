@@ -5,14 +5,11 @@
     <title>Jorge Ferreira — Diretor de Arte</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="css/jorgeferreira.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <![endif]-->
   </head>
   <body>
     <div class="container">
-      <header class="head row" role="banner">
-        <nav class="navbar navbar-default" ng-controller="NavBarCtrl" role="navigation">
+      <div class="row">
+        <header class="navbar navbar-default" ng-controller="NavBarCtrl" role="banner">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">Jorge Ferreira</a>
             <button class="navbar-toggle" ng-click="isCollapsed = !isCollapsed" type="button">
@@ -22,54 +19,58 @@
               <span class="icon-bar"></span>
             </button>
           </div>
-          <div class="collapse navbar-collapse" collapse="isCollapsed">
-            <ul class="menu nav navbar-nav navbar-right">
-              <li class="menu-item dropdown" ng-controller="MenuCtrl">
-                <a class="dropdown-toggle" href="#">Trabalhos
-                <b class="caret"></b>
-                <ul class="dropdown-menu">
-                  <li class="menu-item">
-                    <a href="#">Item 1</a>
-                  </li>
-                </ul></a>
+          <nav class="navbar-collapse" ng-class="!isCollapsed &amp;&amp; 'in'" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#">
+                  Trabalhos
+                  <b class="caret"></b>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Item</a></li>
+                    <li><a href="#">Item</a></li>
+                    <li><a href="#">Item</a></li>
+                    <li><a href="#">Item</a></li>
+                    <li><a href="#">Item</a></li>
+                    <li><a href="#">Item</a></li>
+                    <li><a href="#">Item</a></li>
+                    <li><a href="#">Item</a></li>
+                  </ul>
+                </a>
               </li>
-              <li class="menu-item">
-                <a href="#">Sobre</a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Contato</a>
-              </li>
+              <li><a href="#">Sobre</a></li>
+              <li><a href="#">Contato</a></li>
             </ul>
-          </div>
-        </nav>
-      </header>
-      <section class="body jobs row">
-        <h2 class="heading text-center col-xs-12">Trabalhos</h2>
-        <div class="jobs-list">
-          <div class="job-item col-md-3 col-sm-4 col-xs-6 nogutter">
-            <img alt="" class="img-responsive" src="http://dummyimage.com/800x600">
-          </div>
-          <div class="job-item col-md-3 col-sm-4 col-xs-6 nogutter">
-            <img alt="" class="img-responsive" src="http://dummyimage.com/800x600">
-          </div>
-          <div class="job-item col-md-3 col-sm-4 col-xs-6 nogutter">
-            <img alt="" class="img-responsive" src="http://dummyimage.com/800x600">
-          </div>
-          <div class="job-item col-md-3 col-sm-4 col-xs-6 nogutter">
-            <img alt="" class="img-responsive" src="http://dummyimage.com/800x600">
-          </div>
-          <div class="job-item col-md-3 col-sm-4 col-xs-6 nogutter">
-            <img alt="" class="img-responsive" src="http://dummyimage.com/800x600">
-          </div>
-          <div class="job-item col-md-3 col-sm-4 col-xs-6 nogutter">
-            <img alt="" class="img-responsive" src="http://dummyimage.com/800x600">
-          </div>
-          <div class="job-item col-md-3 col-sm-4 col-xs-6 nogutter">
-            <img alt="" class="img-responsive" src="http://dummyimage.com/800x600">
-          </div>
-          <div class="job-item col-md-3 col-sm-4 col-xs-6 nogutter">
-            <img alt="" class="img-responsive" src="http://dummyimage.com/800x600">
-          </div>
+          </nav>
+        </header>
+      </div>
+      <article class="row">
+        <hgroup class="col-sm-6 col-sm-push-6 col-md-4 col-md-push-8" style="background:#0f0">
+          <h2>Banana Cake Brasil</h2>
+          <h3>Branding / Digital</h3>
+        </hgroup>
+        <div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-4" style="background:#f00">
+          <p>Tokyocube was created to promote designer toys, art, fashion and interior products from Japan to an international audience, providing a unique platform for Japanese merchants to sell to English.</p>
+        </div>
+        <div class="col-xs-12" style="background:#00f">
+          <p>
+            <img alt="" class="img-responsive" src="http://dummyimage.com/1400x800">
+          </p>
+        </div>
+      </article>
+      <hr>
+      <section class="row">
+        <div class="col-xs-12">
+          <h3 class="text-center">Trabalhos</h3>
+          <ul class="jobs-list">
+            <li class="jobs-item"><img alt="" class="img-responsive" src="http://dummyimage.com/400x300"></li>
+            <li class="jobs-item"><img alt="" class="img-responsive" src="http://dummyimage.com/400x300"></li>
+            <li class="jobs-item"><img alt="" class="img-responsive" src="http://dummyimage.com/400x300"></li>
+            <li class="jobs-item"><img alt="" class="img-responsive" src="http://dummyimage.com/400x300"></li>
+            <li class="jobs-item"><img alt="" class="img-responsive" src="http://dummyimage.com/400x300"></li>
+            <li class="jobs-item"><img alt="" class="img-responsive" src="http://dummyimage.com/400x300"></li>
+            <li class="jobs-item"><img alt="" class="img-responsive" src="http://dummyimage.com/400x300"></li>
+            <li class="jobs-item"><img alt="" class="img-responsive" src="http://dummyimage.com/400x300"></li>
+          </ul>
         </div>
       </section>
     </div>

@@ -1,39 +1,49 @@
 !!!
-%html{:lang => "en", "ng-app" => "jorgeApp"} 
+%html{:lang => "en", :ng => {:app => "jorgeApp"}} 
 	%head 
 		%meta{:charset => "UTF-8"}/ 
 		%title Jorge Ferreira — Diretor de Arte
 		%meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}/ 
 		%link{:rel => "stylesheet", :href => "css/jorgeferreira.css"}/ 
-		/ [if lt IE 9]
-			%script{:src => "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"} 
 	%body 
 		.container 
-			%header.head.row{:role => "banner"} 
-				%nav.navbar.navbar-default{:role => "navigation", :ng => {:controller => "NavBarCtrl"}} 
+			.row
+				%header.navbar.navbar-default{:role => "banner", :ng => {:controller => "NavBarCtrl"}} 
 					.navbar-header 
 						%a.navbar-brand{:href => "#"} Jorge Ferreira
 						%button.navbar-toggle{:type => "button", :ng => {:click => "isCollapsed = !isCollapsed"}} 
 							%span.sr-only Toggle navigation
-							- 3.times do |ntime|
+							- 3.times do |ntime| 
 								%span.icon-bar 
-					.collapse.navbar-collapse{:collapse => "isCollapsed"}
-						%ul.menu.nav.navbar-nav.navbar-right 
-							%li.menu-item.dropdown{"ng-controller" => "MenuCtrl"} 
-								%a.dropdown-toggle{:href => "#"}< 
+					%nav.navbar-collapse{:role => "navigation", :ng => {:class => "!isCollapsed && 'in'"}} 
+						%ul.nav.navbar-nav.navbar-right 
+							%li.dropdown 
+								%a.dropdown-toggle{:href => "#"} 
 									Trabalhos
 									%b.caret 
 									%ul.dropdown-menu 
-										%li.menu-item 
-											%a{:href => "#"} Item 1
-							%li.menu-item 
+										- 8.times do |ntime| 
+											%li< 
+												%a{:href => "#"} Item
+							%li< 
 								%a{:href => "#"} Sobre
-							%li.menu-item 
+							%li< 
 								%a{:href => "#"} Contato
-			%section.body.jobs.row
-				%h2.heading.text-center.col-xs-12 Trabalhos
-				.jobs-list 
-					- 8.times do |ntime|
-						.job-item.col-md-3.col-sm-4.col-xs-6.nogutter 
-							%img.img-responsive{:src => "http://dummyimage.com/800x600", :alt => ""}/ 
+			%article.row 
+				%hgroup.col-sm-6.col-sm-push-6.col-md-4.col-md-push-8{:style => "background:#0f0"}
+					%h2 Banana Cake Brasil
+					%h3 Branding / Digital
+				.col-sm-6.col-sm-pull-6.col-md-7.col-md-pull-4{:style => "background:#f00"} 
+					%p Tokyocube was created to promote designer toys, art, fashion and interior products from Japan to an international audience, providing a unique platform for Japanese merchants to sell to English.
+				.col-xs-12{:style => "background:#00f"} 
+					%p 
+						%img.img-responsive{:src => "http://dummyimage.com/1400x800", :alt => ""}/ 
+			%hr/ 
+			%section.row
+				.col-xs-12
+					%h3.text-center Trabalhos 
+					%ul.jobs-list 
+						- 8.times do |ntime| 
+							%li.jobs-item< 
+								%img.img-responsive{:src => "http://dummyimage.com/400x300", :alt => ""}/ 
 		%script{:src => "js/scripts.min.js"} 

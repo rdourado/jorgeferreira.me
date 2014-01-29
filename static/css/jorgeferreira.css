@@ -5002,3 +5002,31 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important; } }
+.jobs-list {
+  padding: 0; }
+
+.jobs-item {
+  list-style: none;
+  margin-bottom: 2px;
+  position: relative;
+  float: left;
+  width: 50%;
+  min-height: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 1px;
+  padding-right: 1px; }
+  @media (min-width: 768px) {
+    .jobs-item {
+      float: left;
+      width: 33.33333%; } }
+  @media (min-width: 992px) {
+    .jobs-item {
+      float: left;
+      width: 25%; } }

@@ -1,0 +1,39 @@
+!!!
+%html{:lang => "en", "ng-app" => "jorgeApp"} 
+	%head 
+		%meta{:charset => "UTF-8"}/ 
+		%title Jorge Ferreira — Diretor de Arte
+		%meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}/ 
+		%link{:rel => "stylesheet", :href => "css/jorgeferreira.css"}/ 
+		/ [if lt IE 9]
+			%script{:src => "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"} 
+	%body 
+		.container 
+			%header.head.row{:role => "banner"} 
+				%nav.navbar.navbar-default{:role => "navigation", :ng => {:controller => "NavBarCtrl"}} 
+					.navbar-header 
+						%a.navbar-brand{:href => "#"} Jorge Ferreira
+						%button.navbar-toggle{:type => "button", :ng => {:click => "isCollapsed = !isCollapsed"}} 
+							%span.sr-only Toggle navigation
+							- 3.times do |ntime|
+								%span.icon-bar 
+					.collapse.navbar-collapse{:collapse => "isCollapsed"}
+						%ul.menu.nav.navbar-nav.navbar-right 
+							%li.menu-item.dropdown{"ng-controller" => "MenuCtrl"} 
+								%a.dropdown-toggle{:href => "#"}< 
+									Trabalhos
+									%b.caret 
+									%ul.dropdown-menu 
+										%li.menu-item 
+											%a{:href => "#"} Item 1
+							%li.menu-item 
+								%a{:href => "#"} Sobre
+							%li.menu-item 
+								%a{:href => "#"} Contato
+			%section.body.jobs 
+				%h2.heading Trabalhos
+				.jobs-list 
+					- 8.times do |ntime|
+						.job-item.col-md-3.col-sm-4.col-xs-6.nogutter 
+							%img.img-responsive{:src => "http://dummyimage.com/800x600", :alt => ""}/ 
+		%script{:src => "js/scripts.min.js"} 

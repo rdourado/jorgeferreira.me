@@ -6,36 +6,52 @@
 		%meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}/ 
 		%link{:rel => "stylesheet", :href => "css/jorgeferreira.css"}/ 
 	%body 
-		.container 
+		.container{:ng => {:controller => "AppCtrl"}} 
 			.row
-				%header.navbar.navbar-default{:role => "banner", :ng => {:controller => "NavBarCtrl"}} 
+				%section.hide{:ng => {:class => "{show: showAbout}"}} 
+					.col-xs-12.col-sm-5.col-sm-push-3.col-md-4.col-lg-push-2 
+						%p I am Jorge Ferreira a self taught Brazilian Graphic designer. Like all French people I live off baguette, champagne and foie gras evidently! I also say ohlala
+					.col-xs-8.col-xs-push-4.col-sm-4.col-sm-push-3.col-md-push-4 
+						%ul 
+							%li + 55 (11) 94970 0394
+							%li< 
+								%a{:href => "#"} contato@jorgeferreira.me
+							%li< 
+								%a{:href => "#"} Linkedin
+							%li< 
+								%a{:href => "#"} Behance
+					.col-xs-4.col-xs-pull-8.col-sm-3.col-sm-pull-9.col-md-pull-8.col-lg-2 
+						%img.img-responsive{:src => "http://dummyimage.com/250x250", :alt => ""}/ 
+			.row
+				%header.navbar.navbar-default{:role => "banner"} 
 					.navbar-header 
-						%a.navbar-brand{:href => "#"} Jorge Ferreira
-						%button.navbar-toggle{:type => "button", :ng => {:click => "isCollapsed = !isCollapsed"}} 
+						%h1.navbar-brand 
+							%a{:href => "#"} Jorge Ferreira
+						%button.navbar-toggle{:type => "button", :ng => {:click => "isXS = !isXS"}} 
 							%span.sr-only Toggle navigation
 							- 3.times do |ntime| 
 								%span.icon-bar 
-					%nav.navbar-collapse{:role => "navigation", :ng => {:class => "!isCollapsed && 'in'"}} 
+					%nav.navbar-collapse{:role => "navigation", :ng => {:class => "{hide: isXS}"}} 
 						%ul.nav.navbar-nav.navbar-right 
 							%li.dropdown 
 								%a.dropdown-toggle{:href => "#"} 
 									Trabalhos
 									%b.caret 
 									%ul.dropdown-menu 
-										- 8.times do |ntime| 
+										- 5.times do |ntime| 
 											%li< 
 												%a{:href => "#"} Item
 							%li< 
-								%a{:href => "#"} Sobre
+								%a{:href => "#", :ng => {:click => "showAbout = !showAbout"}} Sobre
 							%li< 
-								%a{:href => "#"} Contato
+								%a{:href => "#", :ng => {:click => "showAbout = !showAbout"}} Contato
 			%article.row 
-				%hgroup.col-sm-6.col-sm-push-6.col-md-4.col-md-push-8{:style => "background:#0f0"}
+				%hgroup.col-sm-6.col-sm-push-6.col-md-4.col-md-push-8{:ng => {:class => "{'text-right': !isXS}"}} 
 					%h2 Banana Cake Brasil
-					%h3 Branding / Digital
-				.col-sm-6.col-sm-pull-6.col-md-7.col-md-pull-4{:style => "background:#f00"} 
+					%p Branding / Digital
+				.col-sm-6.col-sm-pull-6.col-md-7.col-md-pull-4 
 					%p Tokyocube was created to promote designer toys, art, fashion and interior products from Japan to an international audience, providing a unique platform for Japanese merchants to sell to English.
-				.col-xs-12{:style => "background:#00f"} 
+				.col-xs-12 
 					%p 
 						%img.img-responsive{:src => "http://dummyimage.com/1400x800", :alt => ""}/ 
 			%hr/ 
@@ -45,5 +61,7 @@
 					%ul.jobs-list 
 						- 8.times do |ntime| 
 							%li.jobs-item< 
-								%img.img-responsive{:src => "http://dummyimage.com/400x300", :alt => ""}/ 
+								%a{:href => "#", :tooltip => "Teste"} 
+									%img.img-responsive{:src => "http://dummyimage.com/400x300", :alt => ""}/ 
+		%script{:src => "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"} 
 		%script{:src => "js/scripts.min.js"} 

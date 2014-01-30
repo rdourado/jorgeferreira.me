@@ -1,10 +1,26 @@
 /*
-@codekit-prepend "lib/angular.min.js", "lib/ui-bootstrap-tpls-0.10.0.min.js"
+@codekit-prepend "lib/ui-bootstrap-custom-tpls-0.10.0.min.js"
 global "angular";
 */
 
 var myApp = angular.module('jorgeApp', ['ui.bootstrap']);
 
-function NavBarCtrl($scope) {
-	$scope.isCollapsed = true;
-}
+myApp.controller('AppCtrl', ['$scope', '$window', function($scope, $window) {
+	var bp = 768;
+
+	$scope.getWidth = function() {
+		return $window.document.width;
+	};
+	$scope.$watch($scope.getWidth, function(newValue, oldValue) {
+		if (oldValue >= bp && newValue < bp) 
+			$scope.isXS = true;
+		else if (oldValue < bp && newValue >= bp)
+			$scope.isXS = false;
+	});
+	window.onresize = function() {
+		$scope.$apply();
+	};
+
+	$scope.isXS = ($scope.getWidth() < bp);
+	$scope.showAbout = false;
+}]);

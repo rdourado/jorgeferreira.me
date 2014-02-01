@@ -1,0 +1,43 @@
+@import "config"
+
+#about
+	background: #333
+	color: #fff
+
+.navbar
+	background: none
+	border: 0 none
+
+.heading
+	font-family: $font
+	font-weight: 400
+	text-align: center
+	text-transform: uppercase
+.p-name,
+.p-category
+	font-family: $font	
+	margin: 0
+	text-transform: uppercase
+.p-name
+	font-weight: 400
+.p-category
+	font-weight: 300
+.p-summary
+	font-family: $font
+	font-weight: 300
+.e-content img
+	width: 100%
+
+.jobs
+	padding: 0
+.job
+	list-style: none
+	margin-bottom: 2px
+	@include make-xs-column((12/2), 2px)
+	@include make-sm-column((12/3), 2px)
+	@include make-md-column((12/4), 2px)
+
+@media (min-width: $screen-sm-min)
+	.p-name,
+	.p-category
+		text-align: right

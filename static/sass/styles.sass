@@ -3,10 +3,28 @@
 #about
 	background: #333
 	color: #fff
+.about
+	font-family: $font
+	font-size: (20em/14)
+	font-weight: 300
 
 .navbar
 	background: none
 	border: 0 none
+.logo
+	font-family: $font
+	font-weight: 400
+	letter-spacing: -.05em
+	text-transform: uppercase
+	&:after
+		color: #9cf
+		content: "/"
+		font-family: "Helvetica", sans-serif
+		font-weight: bold
+		margin-left: .1em
+.nav a
+	font-family: $font
+	text-transform: uppercase
 
 .heading
 	font-family: $font
@@ -37,7 +55,14 @@
 	@include make-sm-column((12/3), 2px)
 	@include make-md-column((12/4), 2px)
 
+@media (min-width: $screen-xs-min)
+
 @media (min-width: $screen-sm-min)
 	.p-name,
-	.p-category
+	.p-category,
+	.dropdown-menu
 		text-align: right
+
+@media (min-width: $screen-md-min)
+
+@media (min-width: $screen-lg-min)

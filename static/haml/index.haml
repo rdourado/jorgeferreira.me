@@ -13,9 +13,10 @@
 			.container
 				.row
 					.col-xs-12.col-sm-5.col-sm-push-3.col-md-4.col-md-push-3.col-lg-4.col-lg-push-2
-						%p I am Jorge Ferreira a self taught Brazilian Graphic designer. Like all French people I live off baguette, champagne and foie gras evidently! I also say ohlala
+						%p.about
+							I am Jorge Ferreira a self taught Brazilian Graphic designer. Like all French people I live off baguette, champagne and foie gras evidently! I also say ohlala
 					.col-xs-8.col-xs-push-4.col-sm-4.col-sm-push-3.col-md-4.col-md-push-4.col-lg-3.col-lg-push-5
-						%p 
+						%p.contact
 							+55 (11) 94970 0394
 							%br/ 
 							%a{:href => "#"} contato@jorgeferreira.me
@@ -33,7 +34,7 @@
 							%span.sr-only Toggle navigation
 							- 3.times do |ntime|
 								%span.icon-bar 
-						%a.navbar-brand{:href => "#"} Jorge Ferreira
+						%a.logo.navbar-brand{:href => "#"} Jorge Ferreira
 					.collapse.navbar-collapse#menu
 						%ul.nav.navbar-nav.navbar-right 
 							%li.dropdown 
@@ -70,7 +71,7 @@
 					%ul.jobs
 						- 8.times do |ntime|
 							%li.job
-								%a{:href => "#"} 
+								%a{:href => "#", :title => "Banana Cake Brasil", :data => {:content => "Branding / Digital", :toggle => "popover"}} 
 									%img.img-responsive{:src => "http://dummyimage.com/400x300", :alt => ""}/ 
 		%script{:src => "http://code.jquery.com/jquery-1.10.1.min.js"} 
 		%script{:src => "js/scripts.min.js"} 

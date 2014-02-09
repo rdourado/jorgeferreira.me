@@ -15,6 +15,6 @@ codekit-prepend "bootstrap/transition.js"
 (function($) {
 	$("a[data-toggle='popover']").popover({
 		trigger: 'hover',
-		placement: 'left'
+		placement: 'top'
 	});
 })(jQuery);

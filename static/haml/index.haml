@@ -25,7 +25,7 @@
 							%br/ 
 							%a{:href => "#"} Behance
 					.col-xs-4.col-xs-pull-8.col-sm-3.col-sm-pull-9.col-md-3.col-md-pull-8.col-lg-2.col-lg-pull-7
-						[IMG]
+						%img.avatar.img-responsive{:src => "http://dummyimage.com/300x300/000/fff", :alt => ""}/ 
 		.container
 			.row
 				%nav.navbar.navbar-default{:role => "navigation"}
@@ -34,28 +34,29 @@
 							%span.sr-only Toggle navigation
 							- 3.times do |ntime|
 								%span.icon-bar 
-						%a.logo.navbar-brand{:href => "#"} Jorge Ferreira
+						%a.navbar-brand{:href => "#"} Jorge Ferreira
 					.collapse.navbar-collapse#menu
 						%ul.nav.navbar-nav.navbar-right 
 							%li.dropdown 
-								%a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}} 
+								%a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}< 
 									Trabalhos
 									%b.caret 
-									%ul.dropdown-menu 
-										%li 
-											%a{:href => "#"} Trabalho 1
-										%li 
-											%a{:href => "#"} Trabalho 2
-										%li 
-											%a{:href => "#"} Trabalho 3
-							%li 
+								%ul.dropdown-menu 
+									%li< 
+										%a{:href => "#"} Marca
+									%li< 
+										%a{:href => "#"} Web
+									%li< 
+										%a{:href => "#"} Impresso
+							%li< 
 								%a{:href => "#", :data => {:toggle => "collapse", :target => "#about"}} Sobre
-							%li 
+							%li< 
 								%a{:href => "#", :data => {:toggle => "collapse", :target => "#about"}} Contato
+			%hr/ 
 			%article.h-entry.row
-				%header.col-xs-12.col-sm-6.col-sm-push-6.col-md-5.col-md-push-7.col-lg-5.col-lg-push-7
-					%h1.p-name.job-title Banana Cake Brasil
-					%p.p-category.job-cats 
+				%header.job-header.col-xs-12.col-sm-6.col-sm-push-6.col-md-5.col-md-push-7.col-lg-5.col-lg-push-7
+					%h1.p-name Banana Cake Brasil
+					%p.p-category
 						%a{:href => "#"} Branding
 						\/
 						%a{:href => "#"} Digital
@@ -64,6 +65,7 @@
 				.e-content.col-xs-12
 					%p 
 						%img.img-responsive{:src => "http://dummyimage.com/800x600", :alt => ""}/ 
+			%hr/ 
 			.row
 				.col-xs-12
 					%h2.heading Trabalhos

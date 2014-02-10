@@ -2,13 +2,13 @@
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "../dynamic/wp-content/themes/jorgeferreira/css"
+css_dir = "../dynamic/wp-content/themes/jorgeferreira_v2/css"
 sass_dir = "sass"
 images_dir = "img"
-javascripts_dir = "../dynamic/wp-content/themes/jorgeferreira/js"
+javascripts_dir = "../dynamic/wp-content/themes/jorgeferreira_v2/js"
 fonts_dir = "fonts"
 
-output_style = :nested
+output_style = :compressed
 
 relative_assets = true
 

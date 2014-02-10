@@ -24,15 +24,15 @@
 							<br>
 							<a href="mailto:<?php the_field( 'email', 'options' ) ?>"><?php the_field( 'email', 'options' ) ?></a>
 							<br>
-							<a href="<?php the_field( 'linkedin', 'options' ) ?>">Linkedin</a>
+							<a href="<?php the_field( 'linkedin', 'options' ) ?>" target="_blank">Linkedin</a>
 							<br>
-							<a href="<?php the_field( 'behance', 'options' ) ?>">Behance</a>
+							<a href="<?php the_field( 'behance', 'options' ) ?>" target="_blank">Behance</a>
 						</p>
 					</div>
 					<div class="col-xs-4 col-xs-pull-8 col-sm-3 col-sm-pull-9 col-md-3 col-md-pull-8 col-lg-2 col-lg-pull-7"><?php 
 					$attachment_id = get_field( 'avatar', 'options' );
 					$size = "jf_avatar";
-					wp_get_attachment_image( $attachment_id, $size, false, array( 'class' => 'img-responsive' ) );
+					echo wp_get_attachment_image( $attachment_id, $size, false, array( 'class' => 'img-responsive' ) );
 					?></div>
 				</div>
 			</div>
@@ -50,30 +50,21 @@
 						<a class="navbar-brand" href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ) ?></a>
 					</div>
 					<?php 
-					wp_nav_menu( array(
+					$menu = wp_nav_menu( array(
 						'theme_location'  => 'primary',
 						'container'       => 'div',
 						'container_class' => 'collapse navbar-collapse',
 						'container_id'    => 'menu',
 						'menu_class'      => 'nav navbar-nav navbar-right',
-						'echo'            => true,
+						'echo'            => false,
 						'fallback_cb'     => false,
 						'depth'           => 2
 					) );
+					$menu = str_replace( 'sub-menu', 'dropdown-menu', $menu );
+					$menu = str_replace( '<a href="#">', '<a data-target="#about" data-toggle="collapse" href="#">', $menu );
+					$menu = preg_replace( '/\<a href\=\"\/\"\>(.*?)\<\/a\>/', '<a class="dropdown-toggle" data-toggle="dropdown" href="#">$1<b class="caret"></b></a>', $menu );
+					echo $menu;
 					?>
-						<!-- <ul class="nav navbar-nav navbar-right">
-							<li class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#">Trabalhos
-								<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Marca</a></li>
-									<li><a href="#">Web</a></li>
-									<li><a href="#">Impresso</a></li>
-								</ul>
-							</li>
-							<li><a data-target="#about" data-toggle="collapse" href="#">Sobre</a></li>
-							<li><a data-target="#about" data-toggle="collapse" href="#">Contato</a></li>
-						</ul> -->
 				</nav>
 			</div>
 			<hr>
@@ -108,9 +99,11 @@
 			<hr>
 <?php 		endwhile; ?>
 			<div class="row">
+<?php 			if ( is_single() ) : ?>
 				<div class="col-xs-12">
 					<h2 class="heading">Trabalhos</h2>
 				</div>
+<?php 			endif; ?>
 				<div class="col-xs-12">
 					<ul class="jobs">
 <?php 					query_posts( (is_single() ? "" : "{$query_string}&") . 'posts_per_page=-1' );
